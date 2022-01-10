@@ -58,7 +58,6 @@ function playRound(playerSelection, computerSelection){
   }
 
   console.log(result)
-  return result
 }
 
 function game() {
@@ -67,6 +66,8 @@ function game() {
 
   // call function 5 times for the game 
    for(i = 0; i < 5; i++){
+    const playerSelection = usersPlay();
+    const computerSelection = computerPlay();
     playRound(playerSelection, computerSelection)
 
     if(result === 'You win!'){
@@ -76,8 +77,17 @@ function game() {
     } 
    }
 
-console.log(comp)
-console.log(player)
+// console.log(comp)
+// console.log(player)
+
+if (player > comp){
+  console.log('YOU WIN THE GAME!!!')
+} else if (player < comp){
+  console.log('Sorry, you lost')
+} else {
+  console.log('TIE!!!!')
+}
+
 }
 
 function usersPlay() {
@@ -87,8 +97,4 @@ function usersPlay() {
   return lowerCased
 }
 
-
-// hard coded player selection for testing purposes 
-let playerSelection = usersPlay();
-let computerSelection = computerPlay();
 game()
