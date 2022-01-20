@@ -1,11 +1,25 @@
-// This is a simple game of rock/paper/scissors
-  // play against the computer 
-  // computer randomly selects either rock/paper/or scissors 
-  // the user is then prompted for their input of rock/paper/scissors 
-  // compare the two and based on that winner is selected 
+const main = document.querySelector('main');
+const gameDetails = document.createElement('h2');
+gameDetails.setAttribute('style', 'white-space: pre;');
+gameDetails.className = 'game-details';
+gameDetails.textContent = 'You vs Me \r\n';
+gameDetails.textContent += 'best of 5'
 
-// need a variable to hold the results of the game 
+const readyPlayer1 = document.createElement('h3');
+readyPlayer1.className = 'ready-player-1'
+readyPlayer1.textContent = "Ready Player 1"
+
+const startBtn = document.createElement('button');
+startBtn.className = 'start-button';
+startBtn.textContent = 'start'
+
+main.append(gameDetails)
+main.append(readyPlayer1)
+main.append(startBtn)
+
 let result = null;
+
+
 
 // function for the computer selection - randomly select string 'rock', 'paper', or 'scissors'
 function computerPlay(){
@@ -60,35 +74,35 @@ function playRound(playerSelection, computerSelection){
   console.log(result)
 }
 
-function game() {
-  let comp = 0
-  let player = 0
+// function game() {
+//   let comp = 0
+//   let player = 0
 
-  // call function 5 times for the game 
-   for(i = 0; i < 5; i++){
-    const playerSelection = usersPlay();
-    const computerSelection = computerPlay();
-    playRound(playerSelection, computerSelection)
+//   // call function 5 times for the game 
+//    for(i = 0; i < 5; i++){
+//     const playerSelection = usersPlay();
+//     const computerSelection = computerPlay();
+//     playRound(playerSelection, computerSelection)
 
-    if(result === 'You win!'){
-      player++
-    } else if (result === 'You Lose!'){
-      comp++
-    } 
-   }
+//     if(result === 'You win!'){
+//       player++
+//     } else if (result === 'You Lose!'){
+//       comp++
+//     } 
+//    }
 
-// console.log(comp)
-// console.log(player)
+// // console.log(comp)
+// // console.log(player)
 
-if (player > comp){
-  console.log('YOU WIN THE GAME!!!')
-} else if (player < comp){
-  console.log('Sorry, you lost')
-} else {
-  console.log('TIE!!!!')
-}
+// if (player > comp){
+//   console.log('YOU WIN THE GAME!!!')
+// } else if (player < comp){
+//   console.log('Sorry, you lost')
+// } else {
+//   console.log('TIE!!!!')
+// }
 
-}
+// }
 
 function usersPlay() {
   let userInput = prompt("Rock, Paper, or Scissors?")
@@ -97,4 +111,7 @@ function usersPlay() {
   return lowerCased
 }
 
-game()
+// game()
+// const playerSelection = usersPlay();
+// const computerSelection = computerPlay();
+// playRound(playerSelection, computerSelection)
